@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fox Sports NRL Ladder (Trimmed & Locked)</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* No scroll on the whole doc */
+    }
+
+    .mask-container {
+      width: 100%;
+      height: 810px; /* This is your visible window */
+      overflow: hidden; /* Hide anything below this */
+      position: relative;
+    }
+
+    iframe {
+      position: absolute;
+      top: -520px; /* crop from top */
+      height: 2000px; /* overly tall so content is fully there */
+      border: none;
+      pointer-events: none; /* optional: disables interaction */
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 3px;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="mask-container">
+    <iframe src="https://www.foxsports.com.au/nrl/nrl-premiership/ladder" 
+            title="Fox Sports NRL Ladder" 
+            sandbox="allow-scripts allow-same-origin"
+            loading="lazy">
+    </iframe>
+</body>
+</html>
